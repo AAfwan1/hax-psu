@@ -204,3 +204,81 @@
   </script>
 </body>
 </html>
+<html>
+  <head>
+    <script type="module" src="./my-card.js"></script>
+  </head>
+  <body>
+    <h1>My Card Examples</h1>
+
+    <my-card 
+      title="Card 1" 
+      content="This is the first card." 
+      image="https://via.placeholder.com/150" 
+      backgroundColor="lightblue">
+    </my-card>
+
+    <my-card 
+      title="Card 2" 
+      content="This is the second card." 
+      backgroundColor="lightgreen">
+    </my-card>
+
+    <my-card 
+      title="Card 3" 
+      content="This is the third card without an image." 
+      backgroundColor="lightcoral">
+    </my-card>
+
+    <my-card 
+      title="Card 4" 
+      content="This is the fourth card with another image." 
+      image="https://via.placeholder.com/150" 
+      backgroundColor="lightyellow">
+    </my-card>
+  </body>
+</html>
+<html>
+  <head>
+    <script type="module" src="./my-card.js"></script>
+  </head>
+  <body>
+    <h1>My Card Examples with Interactivity</h1>
+
+    <!-- First card with buttons to change content and background -->
+    <my-card id="card1" 
+      title="Card 1" 
+      content="This is the first card." 
+      image="https://via.placeholder.com/150" 
+      backgroundColor="lightblue">
+    </my-card>
+    <button onclick="changeContent('card1')">Change Content</button>
+    <button onclick="changeBackgroundColor('card1')">Change Background</button>
+
+    <!-- Second card with buttons -->
+    <my-card id="card2" 
+      title="Card 2" 
+      content="This is the second card." 
+      backgroundColor="lightgreen">
+    </my-card>
+    <button onclick="changeContent('card2')">Change Content</button>
+    <button onclick="changeBackgroundColor('card2')">Change Background</button>
+
+  </body>
+
+  <script>
+    // JavaScript functions to change card properties
+
+    function changeContent(cardId) {
+      const card = document.getElementById(cardId);
+      card.setAttribute('content', 'The content has been changed!');
+    }
+
+    function changeBackgroundColor(cardId) {
+      const card = document.getElementById(cardId);
+      const currentColor = card.getAttribute('backgroundColor');
+      const newColor = currentColor === 'lightblue' ? 'lightcoral' : 'lightblue';
+      card.setAttribute('backgroundColor', newColor);
+    }
+  </script>
+</html>
